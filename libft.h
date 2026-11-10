@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 20:29:12 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/10 01:46:10 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/10 22:44:46 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ int     ft_strncmp(const char *s1, const char *s2, size_t n);
 char    *ft_strchr(const char *str, int c);
 char    *ft_strrchr(const char *str, int c);
 char    *ft_strnstr(const char *big, const char *lit, size_t len);
+void    *ft_memset(void *s, int c, size_t n);
+void    ft_bzero(void *s, size_t n);
+void    *ft_memcpy(void *dst, const void *src, size_t n);
 
 #endif
