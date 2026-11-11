@@ -30,7 +30,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	if (size > 0)
 		dst[len_d + i] = '\0';
-	if (size < len_d && size >= 0)
+	if (size < len_d && size > 0)
 		return (size + len_s);
 	return (len_s + len_d);
 }

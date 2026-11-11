@@ -12,27 +12,41 @@
 
 #include "libft.h"
 #include <string.h>
+#include <stdio.h>
+#include <ctype.h>
 
 int     main(int ac, char **av)
 {
-	(void)ac;
-	int	n = ft_atoi(av[5]);
-	int	i = 0;
-	int	len = ft_strlen(av[1]);
+	///////////
+	//toupper//
+	///////////
+	
+	/*(void)ac;
+	printf("M_up\ns va: %c\nre va: %c\n", av[1][0], ft_toupper(av[1][0]));
+	printf("O\ns va: %c\nre va: %c\n\n", av[1][0], toupper(av[1][0]));*/
+	
+	///////////
+	//tolower//
+	///////////
+	
+	/*(void)ac;
+	printf("M_lo\ns val: %c\nre va: %c\n", av[1][0], ft_tolower(av[1][0]));
+	printf("O\ns val: %c\nre va: %c\n", av[1][0], tolower(av[1][0]));*/
 
-	ft_memcpy(av[1], av[2], n);
-	while (i < len)
-	{
-		__builtin_printf("%c ", av[1][i]);
-		i++;
-	}
-	__builtin_printf("\n");
-	i = 0;
-	len = ft_strlen(av[3]);
-	memcpy(av[3], av[4], n);
-	while (i < len)
-	{
-		__builtin_printf("%c ", av[3][i]);
-		i++;
-	}
+	//////////
+	//memcpy//
+	//////////
+	
+	(void)ac;
+	int	n = ft_atoi(av[1]);
+	int	n2 = n;
+	char	dst[3] = "qw";
+	char	dst2[3] = "qw";
+	char	src[13] = "asdfghjkl";
+	char	src2[13] = "asdfghjkl";
+
+	ft_memcpy(dst, src, n);
+	printf("%s\n", dst);
+	memcpy(dst2, src2, n2);
+	printf("%s\n", dst2);
 }
