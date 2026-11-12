@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mainmem.c                                          :+:      :+:    :+:   */
+/*   main_memcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 17:55:17 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/11 19:57:47 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/12 02:57:39 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,52 +16,41 @@
 
 int	main(void)
 {
-	size_t	i = 0;
-        size_t	len = 0;
-	
-	printf("1-----------all empty-----------1\n\n");
-	char	*dst10 = ft_memcpy("", "" , 0);
-	char	*dst11 = memcpy("", "", 0);
-	printf("M = %s\t\t", dst10);
-       	printf("O = %s\n", dst11);
+	char	dst00[] = "";				
+	char	dst01[] = "";
+	printf("v=1 d=\"\" s=\"\"\tM = %s\t", (char *)ft_memcpy(dst00, "", 1));
+	printf("O = %s\n", (char *)memcpy(dst01, "", 1));
+	printf("\n");
 
-	printf("\n2-----------empty src-----------2\n\n");
-	
-	char	*dst20 = ft_memcpy("destination", "", 0);
-	char	*dst21 = memcpy("destination", "", 0);
-        printf("M = %s\t\t", dst20);
-        printf("O = %s\n", dst21);
+        char    dst10[] = "destination";                                    
+        char    dst11[] = "destination";
+        printf("v=1 d=destination s=\"\"\tM = %s\t", (char *)ft_memcpy(dst10, "", 1));
+        printf("O = %s\n", (char *)memcpy(dst11, "", 1));
+	printf("\n");
 
-	printf("\n3-----------dst > src-------------3\n\n");
+	char	dst20[] = "";
+	char	dst21[] = "";
+	printf("v=2 d=\"\" s=source\tM = %s\t", (char *)ft_memcpy(dst20, "source", 1));
+	printf("O = %s\n", (char *)memcpy(dst21, "source", 1));
+	printf("\n");
 
-	char    src3[] = "source";
-	len = ft_strlen(src3);
-	while (i <= len)
+        /*char    dst20[] = "destination";
+        char    dst21[] = "destination";
+	int	i = 0;
+	while (i < 8)
 	{
-		char	dst30[] = "destination";
-		ft_memcpy(dst30, src3, i);
-        	printf("size = %zu\tM = %s\t\t", i, dst30);
-		char	dst31[] = "destination";
-		memcpy(dst31, src3, i);
-        	printf("O = %s\n\n", dst31);
+		printf("v=%d d=destination s=source\tM = %s\t", i, (char *)ft_memcpy(dst20, "source", i));
+		printf("O = %s\n", (char *)memcpy(dst21, "source", i));
 		i++;
 	}
+	printf("\n");*/
 	
-	printf("\n4-----------dst = src-------------4\n\n");
-        
-	char    src4[] = "source";
-        len = ft_strlen(src4);
-	i = 0;
-        while (i <= len)
-        {   
-                char    dst40[] = "destin";
-                ft_memcpy(dst40, src4, i); 
-                printf("size = %zu\tM = %s\t\t", i, dst40);
-                char    dst41[] = "destin";
-                memcpy(dst41, src4, i); 
-                printf("O = %s\n\n", dst41);
-                i++;
-        }
+	/*char
+       
+
+
+
+
 
 	printf("\n5-----------dst < src-------------5\n\t!!!!!check gdb!!!!!\n\n");
 
@@ -95,6 +84,6 @@ int	main(void)
                 memcpy(dst61, src6, i);
                 printf("O = %s\n\n", dst61);
                 i++;
-        }
+        }*/
 }
 
