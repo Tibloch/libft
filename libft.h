@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 20:29:12 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/10 22:44:46 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/11 21:23:38 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int     ft_isalnum(int c);
 int     ft_isalpha(int c);
 int     ft_isascii(int c);
 int     ft_isdigit(int c);
+int	ft_isprint(int c);
 int     ft_atoi(const char *str);
 int	ft_tolower(int c);
 int	ft_toupper(int c);

@@ -6,13 +6,13 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 22:24:11 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/09 20:22:40 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/11 21:14:42 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c > 31 && c < 127)
+	if (c >= 0 && c < 128)
 		return (1);
 	return (0);
 }

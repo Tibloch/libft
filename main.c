@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 21:23:42 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/10 23:05:44 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/11 18:11:11 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,16 @@ int     main(int ac, char **av)
 	//////////
 	
 	(void)ac;
-	int	n = ft_atoi(av[1]);
-	int	n2 = n;
+	(void)av;
+	//int	n = ft_atoi(av[1]);
+	//int	n2 = n;
 	char	dst[3] = "qw";
 	char	dst2[3] = "qw";
 	char	src[13] = "asdfghjkl";
 	char	src2[13] = "asdfghjkl";
 
-	ft_memcpy(dst, src, n);
+	ft_memcpy(dst, src, 0);
 	printf("%s\n", dst);
-	memcpy(dst2, src2, n2);
+	memcpy(dst2, src2, 0);
 	printf("%s\n", dst2);
 }

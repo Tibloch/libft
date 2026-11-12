@@ -6,13 +6,13 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 21:34:22 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/09 20:38:15 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/11 21:53:29 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
 	if (c > 47 && c < 58)
-		return (1);
+		return(1);
 	return (0);
 }
