@@ -36,10 +36,21 @@ char	*ft_strdup(const char *s)
 
 int	main()
 {
-	//char	*str = ft_strdup("string");
-	//printf("%s\n", str);
-	char	*str2 = strdup("");
-	printf("%s\n", str2);
-	//free(str);
-	//free(str2);
+	printf("M = %s\n", ft_strdup(""));
+	printf("O = %s\n\n", strdup(""));
+	
+	printf("M = %s\n", ft_strdup("q"));
+	printf("O = %s\n\n", strdup("q"));
+	
+	printf("M = %s\n", ft_strdup("qwer"));
+	printf("O = %s\n\n", strdup("qwer"));
+	
+	printf("M = %s\n", ft_strdup("qw\0er"));
+	printf("O = %s\n\n", strdup("qw\0er"));
+	
+	printf("M = %s\n", ft_strdup("\0qwer"));
+	printf("O = %s\n\n", strdup("\0qwer"));
+
+	//printf("M = %s\n", ft_strdup(0));
+	//printf("O = %s\n\n", strdup(0));
 }
