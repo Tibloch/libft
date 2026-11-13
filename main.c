@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 21:23:42 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/11 18:11:11 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/13 00:41:03 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
-int     main(int ac, char **av)
+int     main()
 {
 	///////////
 	//toupper//
@@ -37,7 +38,7 @@ int     main(int ac, char **av)
 	//memcpy//
 	//////////
 	
-	(void)ac;
+/*	(void)ac;
 	(void)av;
 	//int	n = ft_atoi(av[1]);
 	//int	n2 = n;
@@ -49,5 +50,16 @@ int     main(int ac, char **av)
 	ft_memcpy(dst, src, 0);
 	printf("%s\n", dst);
 	memcpy(dst2, src2, 0);
-	printf("%s\n", dst2);
+	printf("%s\n", dst2);*/
+
+	char *dst = ft_calloc(4, sizeof(int));
+	if (dst[0])
+	for (int i = 0; i < 4; i++)
+		printf("%d ", dst[i]);
+	printf("\n");
+        char *dst2 = calloc(2147483647, sizeof(int));
+        if (dst2 == NULL)
+		for (int j = 0; j < 2147483647; j++)
+                	printf("%d, ", dst2[j]);
+
 }

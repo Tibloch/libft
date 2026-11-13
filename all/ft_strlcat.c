@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 21:09:23 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/11 23:51:12 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/12 19:33:49 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	len_d = ft_strlen(dst);
 	i = 0;
 	if (!size)
-	       return (len_s);	
+	       return (len_s);
+	if (size < len_d)
+		return (size + len_s);
 	while (src[i] && size > len_d && (size - len_d - 1) > i)
 	{
 		dst[len_d + i] = src[i];
 		i++;
 	}
-	if (size > 0)
-		dst[len_d + i] = '\0';
-	if (size < len_d && size > 0)
-		return (size + len_s);
+	dst[len_d + i] = '\0';
 	return (len_s + len_d);
 }
