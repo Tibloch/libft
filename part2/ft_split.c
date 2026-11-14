@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/14 00:46:59 by tibloch           #+#    #+#             */
+/*   Updated: 2026/11/14 00:48:55 by tibloch          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 //#include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -67,14 +79,14 @@ char	**ft_split(char const *s, char c)
 	while (ct_w > 0)
 	{
 		ct_l = count_letter(s, c, &j);
-		array[i] = malloc(sizeof(char) * (ct_l + 1));
+		array[i] = malloc(sizeof(char) * ct_l + 1);
 		if (!array[i])
 			return (NULL);
 		fill_array(array[i], s, c, j - ct_l);
 		ct_w--;
 		i++;
 	}
-	array[i] = '\0';
+	array[i] = NULL;
 	return (array);
 }
 
@@ -94,7 +106,7 @@ int	main()
 	i = 0;
 
 
-	printf("-------------\n");
+	/*printf("-------------\n");
 	char **arr1 = ft_split("    ", ' ');
 	while (arr1[i])
 	{
@@ -128,7 +140,7 @@ int	main()
 		i++;
 	}
 	free(arr3);
-	i = 0;
+	i = 0;*/
 
 
 
