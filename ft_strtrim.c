@@ -13,34 +13,31 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_isset(char c, char const *set)
+static int	isset(char c, char const *set)
 {
 	int	i;
 
 	i = 0;
 	while (set[i])
 	{
-		if (set[i] == c)
-			return (1);
+		if (c == set[i])
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
-int	ft_len(char const *s1, char const *set)
+static void	set_index(char const *s, char const *set, int *i, int n)
 {
-	int	i;
-	int	len;
-
-	i = 0;
-	len = 0;
-	while (s1[i])
+	while (s[*i] || *i >= 0)
 	{
-		if (!ft_isset(s1[i], set))
-			len++;
-		i++;
+		if (isset(s[*i], set))
+			return;
+		if (n == 0)
+			(*i)++;
+		else
+			(*i)--;
 	}
-	return (len);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -50,22 +47,62 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	int		len;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	i = 0;
-	j = 0;
-	len = ft_len(s1, set);
+	len = ft_strlen(s1);
+	j = len - 1;
+	set_index(s1, set, &i, 0);
+	set_index(s1, set, &j, 1);
+	len = len - (len - (j + 1)) - i;
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	while (len >= 0)
+	while (i <= j)
 	{
-		if (!ft_isset(s1[i], set))
-		{
-			str[j] = s1[i];
-			j++;
-		}
+		*str = s1[i];
+		str++;
 		i++;
-		len--;
 	}
-	str[j] = '\0';
-	return (str);
+	*str = '\0';
+	return (str - len);
+}
+
+#include <stdio.h>
+
+int	main()
+{
+	char *str0 = ft_strtrim("hello world", " ");
+	printf("%s\n", str0);
+	free(str0);
+
+	char *str1 = ft_strtrim("hello world   ", " ");
+	printf("%s\n", str1);
+	free(str1);
+
+	char *str2 = ft_strtrim("   hello world", " ");
+	printf("%s\n", str2);
+	free(str2);
+
+	char *str3 = ft_strtrim("   hello world   ", " ");
+	printf("%s\n", str3);
+	free(str3);
+
+	char *str4 = ft_strtrim("", " ");
+	printf("%s\n", str4);
+	free(str4);
+
+	char *str5 = ft_strtrim("   hello world   ", " hdl");
+	printf("%s\n", str5);
+	free(str5);
+
+	char *str6 = ft_strtrim(NULL, " ");
+	if (str6 != NULL)
+		printf("%s\n", str6);
+	free(str6);
+
+	char *str7 = ft_strtrim("   hello world   ", NULL);
+	if (str7 != NULL)
+		printf("%s\n", str7);
+	free(str7);
 }
