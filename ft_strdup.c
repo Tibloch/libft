@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 23:48:18 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/16 02:29:33 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/17 00:24:11 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ char	*ft_strdup(const char *s)
 
 int	main()
 {
+	printf("%s\n", ft_strdup(NULL));
+	printf("%s\n", strdup(NULL));
+
 	printf("M = %s\n", ft_strdup(""));
 	printf("O = %s\n\n", strdup(""));
 	

@@ -6,13 +6,13 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 00:46:59 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/15 23:47:21 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/17 02:36:39 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	count_word(char const *s, char c)
+static int	count_word(char const *s, char c)
 {
 	int	i;
 	int	ct;
@@ -31,7 +31,7 @@ int	count_word(char const *s, char c)
 	return (ct);
 }
 
-int	count_letter(char const *s, char c, int *j)
+static int	count_letter(char const *s, char c, int *j)
 {
 	int	ct;
 
@@ -46,7 +46,7 @@ int	count_letter(char const *s, char c, int *j)
 	return (ct);
 }
 
-void	fill_array(char *str, char const *s, char c, int start)
+static void	fill_array(char *str, char const *s, char c, int start)
 {
 	int	i;
 
@@ -70,6 +70,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (s == NULL)
+		return (NULL);
 	ct_w = count_word(s, c);
 	array = malloc(sizeof(char *) * (ct_w + 1));
 	if (!array)
@@ -77,7 +79,7 @@ char	**ft_split(char const *s, char c)
 	while (ct_w > 0)
 	{
 		ct_l = count_letter(s, c, &j);
-		array[i] = malloc(sizeof(char) * ct_l + 1);
+		array[i] = malloc(sizeof(char) * (ct_l + 1));
 		if (!array[i])
 			return (NULL);
 		fill_array(array[i], s, c, j - ct_l);

@@ -6,32 +6,67 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 18:38:27 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/09 21:01:03 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/17 00:12:38 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
-	int	res;
+	int long long	res;
 
 	i = 0;
 	sign = 1;
 	res = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
+		sign = 44 - str[i];
 		i++;
-		sign = -1;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = (res * 10) + (str[i] - 48);
 		i++;
+		if (res < 0 && str[0] == '-')
+			return (0);
+		if (res < 0)
+			return (-1);
 	}
 	return (res * sign);
 }
+
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int	main()
+{
+	printf("%d\n", ft_atoi("21474836"));
+	printf("%d\n", atoi("21474836"));
+	printf("%d\n", ft_atoi("-21474836"));
+	printf("%d\n\n", atoi("-21474836"));
+	
+	printf("%d\n", ft_atoi("2147483651"));
+	printf("%d\n", atoi("2147483651"));
+	printf("%d\n", ft_atoi("-2147483652"));
+	printf("%d\n\n", atoi("-2147483652"));
+
+	printf("%d\n", ft_atoi("9223372036854775806"));
+	printf("%d\n", atoi("9223372036854775806"));
+	printf("%d\n", ft_atoi("-9223372036854775806"));
+	printf("%d\n\n", atoi("-9223372036854775806"));
+	
+	printf("%d\n", ft_atoi("9223372036854775810"));
+	printf("%d\n", atoi("9223372036854775810"));
+	printf("%d\n", ft_atoi("-9223372036854775810"));
+	printf("%d\n\n", atoi("-9223372036854775810"));
+
+	printf("%d\n", ft_atoi("11111111111111111111111111111"));
+	printf("%d\n", atoi("11111111111111111111111111111"));
+	printf("%d\n", ft_atoi("-11111111111111111111111111"));
+	printf("%d\n\n", atoi("-11111111111111111111111111"));
+}*/
