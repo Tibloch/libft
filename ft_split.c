@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 00:46:59 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/17 02:36:39 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/18 01:22:19 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,8 @@ char	**ft_split(char const *s, char c)
 		array[i] = malloc(sizeof(char) * (ct_l + 1));
 		if (!array[i])
 			return (NULL);
-		fill_array(array[i], s, c, j - ct_l);
+		fill_array(array[i++], s, c, j - ct_l);
 		ct_w--;
-		i++;
 	}
 	array[i] = NULL;
 	return (array);

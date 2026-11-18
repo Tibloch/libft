@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 20:09:38 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/16 00:51:49 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/18 00:55:07 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,36 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	char	*arr_dst;
 	char	*arr_src;
-	char	arr_tmp[10];
+	char	arr_tmp[1];
 	size_t	i;
-	size_t	j;
 
-	j = 0;
+	i = 0;
 	arr_src = (char *)src;
 	arr_dst = (char *)dst;
-	while (n > j)
+	if (dst - src > 0)
 	{
-		i = 0;
-		while (i < 10 && i < n)
+		while (n > 0)
 		{
-			arr_tmp[i] = arr_src[i];
-			arr_dst[j] = arr_tmp[i];
-			i++;
-			j++;
+			arr_tmp[0] = arr_src[n - 1];
+			arr_dst[n - 1] = arr_tmp[0];
+			n--;
 		}
+		return (dst);
+	}
+	while (i < n)
+	{
+		arr_tmp[0] = arr_src[i];
+		arr_dst[i] = arr_tmp[0];
+		i++;
 	}
 	return (dst);
 }
+
+/*#include <stdio.h>
+
+int	main()
+{
+	char dst0[] = "                                                       ";
+	ft_memmove(dst0, "0000000000000000000000", 55);
+	printf("%s\n", dst0);
+}*/

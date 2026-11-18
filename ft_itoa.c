@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
 #include <stdlib.h>
-//#include <stdio.h>
 
-void	fill_arr(char *array, int long save, int ct, int sign)
+static void	fill_arr(char *array, int long save, int ct, int sign)
 {
 	if (save < 0)
 	{

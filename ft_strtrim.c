@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 02:22:26 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/15 23:45:45 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/18 00:53:21 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,18 @@ static int	isset(char c, char const *set)
 	return (1);
 }
 
-static void	set_index(char const *s, char const *set, int *i, int n)
+static int	set_index(char const *s, char const *set, int i, int n)
 {
-	while (s[*i] || *i >= 0)
+	while (s[i] || i >= 0)
 	{
-		if (isset(s[*i], set))
-			return;
+		if (isset(s[i], set))
+			return (i);
 		if (n == 0)
-			(*i)++;
+			i++;
 		else
-			(*i)--;
+			i--;
 	}
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -49,12 +50,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	i = 0;
+	i = set_index(s1, set, 0, 0);
 	len = ft_strlen(s1);
-	j = len - 1;
-	set_index(s1, set, &i, 0);
-	set_index(s1, set, &j, 1);
+	j = set_index(s1, set, len - 1, 1);
 	len = len - (len - (j + 1)) - i;
+	if (len < 0)
+		len = 0;
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
@@ -68,7 +69,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str - len);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main()
 {
@@ -105,4 +106,8 @@ int	main()
 	if (str7 != NULL)
 		printf("%s\n", str7);
 	free(str7);
-}
+
+	char *str8 = ft_strtrim("      ", " ");
+	printf("%s\n", str8);
+	free(str8);
+}*/

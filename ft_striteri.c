@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 01:46:34 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/14 02:12:10 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/17 21:18:54 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (*s)
 	{

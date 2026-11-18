@@ -6,16 +6,14 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 18:38:27 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/17 00:12:38 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/18 00:45:11 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int				i;
+	int				sign;
 	int long long	res;
 
 	i = 0;
@@ -40,7 +38,7 @@ int	ft_atoi(const char *str)
 	return (res * sign);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 int	main()
@@ -69,4 +67,4 @@ int	main()
 	printf("%d\n", atoi("11111111111111111111111111111"));
 	printf("%d\n", ft_atoi("    -11111111111111111111111111"));
 	printf("%d\n\n", atoi("    -11111111111111111111111111"));
-}
+}*/
