@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 19:02:19 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/18 00:13:49 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/18 22:33:13 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	new->next = NULL;
-	while (!*lst)
-	{
+	if (!lst || !new)
+		return;
+	if (!*lst)
+		*lst = new;
+	else
 		ft_lstlast(*lst)->next = new;
-		lst = &new;
-	}
 }
 
 /*int	main()
