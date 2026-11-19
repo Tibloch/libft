@@ -89,7 +89,9 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-/*int	main()
+/*#include <stdio.h>
+
+int	main()
 {
 
 	int i = 0;
@@ -119,7 +121,7 @@ char	**ft_split(char const *s, char c)
 
 
 	printf("-------------\n");
-	char **arr2 = ft_split("un      premier      test", ' ');
+	char **arr2 = ft_split("un      premier      test", " ");
 	while (arr2[i])
 	{
 		printf("%s\n", arr2[i]);
@@ -143,9 +145,32 @@ char	**ft_split(char const *s, char c)
 
 
 
+	printf("-------------\n");
+	char **arr4 = ft_split("", ' ');
+	while (arr4[i])
+	{
+		printf("%s\n", arr4[i]);
+		free(arr4[i]);
+		i++;
+	}
+	free(arr4);
+	i = 0;
 
 
 
+	printf("-------------\n");
+	char **arr5 = ft_split(NULL, ' ');
+	if (arr5 == NULL)
+		printf("NULL\n");	
+	else
+		while (arr5[i])
+		{
+			printf("%s\n", arr5[i]);
+			free(arr5[i]);
+			i++;
+		}
+	free(arr5);
+	i = 0;
 
 
 	char **array0 = ft_split("un premier teste", ' ');

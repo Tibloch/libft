@@ -5,7 +5,7 @@ SRCS = ft_atoi.c ft_isalpha.c ft_itoa.c ft_lstdelone.c ft_lstsize.c ft_memmove.c
 OBJS = $(SRCS:.c=.o)
 
 %.o: %.c
-	$(CC) -I libft.h $(CFLAGS) -c $< -o $@
+	$(CC) -I .libft.h $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
