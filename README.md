@@ -10,20 +10,20 @@ This is a C library designed for C learning and to be used during the school 42 
 
 Fonctions that are made to have the same comportement than the original one.
 
-| Fonction                                                          | Description                                                                                                         |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| is                                                                | look for char                                                                                                       |
-|                                                                   |                                                                                                                     |
-| int ft_isalpha(int c)                                             | if c = alpha char return 1 else 0                                                                                   |
-| int ft_isalnum(int c)                                             | if c = alpha or digit char return 1 else 0                                                                          |
-| int ft_isascii(int c)                                             | if c = ascii char return 1 else 0                                                                                   |
-| int ft_isdigit(int c)                                             | if c = digit char return 1 else 0                                                                                   |
-| int ft_isprint(int c)                                             | if c = printable char return 1 else 0                                                                               |
-|                                                                   |                                                                                                                     |
-| str                                                               | string                                                                                                              |
-| char *ft_strchr(const char *str, int c)                           | search and return a pointer of  the first char c in str or NULL if no match                                         |
-| char *ft_strdup(const char *s)                                    | copy string s in new malloc string and return it                                                                    |
-| size_t ft_strlcat(char *dst, const char *src, size_t size)        | concatenate size bytes of src to dst and return len of dst+src or src+size if size <len of dst                      |
+| Fonction                                                    | Description                            |
+| ------------------------------------------------------------|--------------------------------------- |
+| is                                                          | look for char                          |
+|                                                             |                                        |
+| int ft_isalpha(int c)                                       |if c = alpha char return 1 else 0       |
+| int ft_isalnum(int c)                                       | if c = alpha or digit char return 1 else 0                                                                          |
+| int ft_isascii(int c)                                       | if c = ascii char return 1 else 0                                                                                   |
+| int ft_isdigit(int c)                                       | if c = digit char return 1 else 0                                                                                   |
+| int ft_isprint(int c)                                       | if c = printable char return 1 else 0                                                                               |
+|                                                             |                                                                                                                     |
+| str                                                         | string                                                                                                              |
+| char *ft_strchr(const char *str, int c)                     | search and return a pointer of  the first char c in str or NULL if no match                                         |
+| char *ft_strdup(const char *s)                              | copy string s in new malloc string and return it                                                                    |
+| size_t ft_strlcat(char *dst, const char *src, size_t size)  | concatenate size bytes of src to dst and return len of dst+src or src+size if size <len of dst                      |
 | size_t ft_strlcpy(char *dst, const char *src, size_t size)        | copy size bytes of src to dst, return len of src                                                                    |
 | size_t ft_strlen(const char *str)                                 | count and return size of str                                                                                        |
 | int ft_strncmp(const char *s1, const char s2*, size_t n)          | compare s1 and s2 for n bytes and return 0 for s1=s2, <0 for s1 < s2, >0 for s1>s2                                  |
