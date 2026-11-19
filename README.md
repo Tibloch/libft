@@ -2,24 +2,27 @@
 
 # Libft
 
-### Description
+## Description
 
 Personal C library made for the purpose of learning C 
 
-### Instruction
+## Instruction
 
-### Ressources
+## Ressources
 
 Linux Programmer's Manual, Stack Overflow, MYCPLUS, Students of 42 Lyon
 100 % humans brains
 
-#### First part
+--------------
+
+### First part
 
 Functions that are made to have the same comportement than the original one.
 
 | Function                                                    | Description                             |
 | ------------------------------------------------------------|---------------------------------------- |
-| is                                                          | look for char                           |
+|								|					|
+| is                                                          | look for certain charactere value                       |
 |                                                             |                                         |
 | int ft_isalpha(int c)                                       | if c = alpha char return 1 else 0       |
 | int ft_isalnum(int c)                                       | if c = alpha or digit char return 1 else 0 |
@@ -27,7 +30,8 @@ Functions that are made to have the same comportement than the original one.
 | int ft_isdigit(int c)                                       | if c = digit char return 1 else 0       |
 | int ft_isprint(int c)                                       | if c = printable char return 1 else 0   |
 |                                                             |                                         |
-| str                                                         | string                                  |
+| string                                                        | use and modify string                                 |
+|								|					|
 | char *ft_strchr(const char *str, int c)                     	    | search and return a pointer of  the first char c in str or NULL if no match |
 | char *ft_strdup(const char *s)                              	    | copy string s in new malloc string and return it |
 | size_t ft_strlcat(char *dst, const char *src, size_t size)  	    | concatenate size bytes of src to dst and return len of dst+src or src+size if size < len of dst |
@@ -37,7 +41,7 @@ Functions that are made to have the same comportement than the original one.
 | char *ft_strnstr(const char *big, const char *little, size_t len) | search little in big, return pointer to first char of little in big or big if little is empty or NULL  for no match |
 | char *ft_strrchr(const char *str, int c)                    	    | search and return a pointer of the last char c in str or NULL if no match |
 |                                                             |                                         |
-| mem                                                         |		                                    |
+| mem                                                         |	use memory	                                    |
 |                                                             |                                         |
 | void *ft_memchr(const void *s, int c, size_t n)             | search first c in *s for n bytes and return a pointer to it or NULL if no match |
 | int ft_memcmp(const char *s1, const char *s2, size_t n)     | compare s1 and s2 for n bytes and return 0 for s1=s2, <0 for s1 < s2, >0 for s1 > s2 |
@@ -46,7 +50,8 @@ Functions that are made to have the same comportement than the original one.
 | void *ft_memset(void *s, int c, size_t n)                   | fill n bytes of s with c, return area pointed by s |
 | void ft_bzero(void *s, size_t n)                            | fill n bytes of s with zero             |
 |                                                             |                                         |
-| misc                                                        |      	                                |
+| miscellaneous                                                        |      	                                |
+|								|					|
 | int ft_tolower(int c)                                       | if c = uppercase convert to lowercase, return c |
 | int ft_toupper(int c)                                       | if c = lowercase convert to uppercase, return c |
 | int ft_atoi(const char *str)                                | convert initial portion of nptr to int and return it or 0 on error |
@@ -54,13 +59,15 @@ Functions that are made to have the same comportement than the original one.
 
 -------------
 
-#### Second part
+### Second part
 
 Functions that exist in a different form or not at all
 
 | Function | Description |
 | -------- | ----------- |
-| str      |		 |
+|		|	|
+| str      | use/modify string 		 |
+|		|	|
 | char *ft_itoa(int n)   | convert and return a int in array of char |
 | char **ft_split(char const *s, char c) | alloc memory and return an array of string by spliting s with c for delimiter |
 | void ft_striteri(char *s, void (*f)(unsigned int, char *)) | applies f to each character of s, f param are the index and the string |
@@ -69,7 +76,8 @@ Functions that exist in a different form or not at all
 | char *ft_strtrim(char const *s1, char const *set) | alloc memory and return new string wich is s1 with removed character from set from the beginning and the end |
 | char *ft_substr(char const *s, unsigned int start, size_t len) | alloc memory and return new string from s wich begin at start and with max length of len |
 |	  |		|
-|fd 	  |		|
+| fd 	  | write to file descriptor		|
+|		|	|
 | void ft_putchar_fd(char c, int fd) | write c to the file fd |
 | void ft_putendl_fd(char *s, int fd) | write s and a newline to the file fd |
 | void ft_putnbr_fd(int n, int fd) | write n to the file fd |
@@ -77,7 +85,7 @@ Functions that exist in a different form or not at all
 
 ---------
 
-#### Third part
+### Third part
 
 Function that manipulate linked list
 
