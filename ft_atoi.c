@@ -6,11 +6,11 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 18:38:27 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/18 00:45:11 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/19 03:19:22 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int				i;
 	int				sign;
@@ -19,18 +19,18 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	res = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
 		str++;
-	if (*str == '+' || *str == '-')
+	if (*nptr == '+' || *nptr == '-')
 	{
-		sign = 44 - *str;
+		sign = 44 - *nptr;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		res = (res * 10) + (str[i] - 48);
+		res = (res * 10) + (nptr[i] - 48);
 		i++;
-		if (res < 0 && str[0] == '-')
+		if (res < 0 && nptr[0] == '-')
 			return (0);
 		if (res < 0)
 			return (-1);
