@@ -12,7 +12,6 @@
 
 #include "libft.h"
 #include <stdlib.h>
-#include <unistd.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

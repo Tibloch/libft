@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 18:38:27 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/19 03:19:22 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/20 19:42:32 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	res = 0;
 	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
-		str++;
+		nptr++;
 	if (*nptr == '+' || *nptr == '-')
 	{
 		sign = 44 - *nptr;

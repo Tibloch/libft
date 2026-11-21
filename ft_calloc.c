@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 00:07:50 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/16 03:05:54 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/20 21:26:01 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	array = malloc(size * nmemb);
 	if (!array)
 		return (NULL);
-	ft_memset(array, 0, nmemb);
+	ft_memset(array, 0, nmemb * size);
 	return (array);
 }

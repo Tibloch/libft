@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 00:46:59 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/18 01:22:19 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/20 20:01:36 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	count_word(char const *s, char c)
 
 	i = 0;
 	ct = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		while (s[i] == c)
 			i++;
@@ -31,33 +31,48 @@ static int	count_word(char const *s, char c)
 	return (ct);
 }
 
-static int	count_letter(char const *s, char c, int *j)
+static int	count_letter(char const *s, char c, int j)
 {
 	int	ct;
 
 	ct = 0;
-	while (s[*j] == c)
-		(*j)++;
-	while (s[*j] && s[*j] != c)
+	while (s[j] == c)
+		j++;
+	while (s[j] && s[j] != c)
 	{
-		(*j)++;
+		j++;
 		ct++;
 	}
 	return (ct);
 }
 
-static void	fill_array(char *str, char const *s, char c, int start)
+static void	fill_array(char *str, char const *s, char c, int *start)
 {
 	int	i;
 
 	i = 0;
-	while (s[start] && s[start] != c)
+	while (s[*start] == c)
+		(*start)++;
+	while (s[*start] && s[*start] != c)
 	{
-		str[i] = s[start];
-		start++;
+		str[i] = s[*start];
+		(*start)++;
 		i++;
 	}
 	str[i] = '\0';
+}
+
+static void	free_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
 char	**ft_split(char const *s, char c)
@@ -66,24 +81,24 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 	int		ct_w;
-	int		ct_l;
 
 	i = 0;
 	j = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	ct_w = count_word(s, c);
 	array = malloc(sizeof(char *) * (ct_w + 1));
 	if (!array)
 		return (NULL);
-	while (ct_w > 0)
+	while (ct_w-- > 0)
 	{
-		ct_l = count_letter(s, c, &j);
-		array[i] = malloc(sizeof(char) * (ct_l + 1));
+		array[i] = malloc(sizeof(char) * (count_letter(s, c, j) + 1));
 		if (!array[i])
+		{
+			free_array(array);
 			return (NULL);
-		fill_array(array[i++], s, c, j - ct_l);
-		ct_w--;
+		}
+		fill_array(array[i++], s, c, &j);
 	}
 	array[i] = NULL;
 	return (array);
@@ -121,7 +136,7 @@ int	main()
 
 
 	printf("-------------\n");
-	char **arr2 = ft_split("un      premier      test", " ");
+	char **arr2 = ft_split("un      premier      test", ' ');
 	while (arr2[i])
 	{
 		printf("%s\n", arr2[i]);
