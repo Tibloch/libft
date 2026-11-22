@@ -9,9 +9,9 @@ Personal C library made for the purpose of learning C
 ## Instruction
 
 Makefile command: 
-make: compil and make archive
-make clean: delete objects and dependencies
-make fclean: clean and delete archive
+make: compil and make archive  
+make clean: delete objects and dependencies  
+make fclean: clean and delete archive  
 make re: fclean then make
 
 ## Ressources
