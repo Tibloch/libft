@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 00:22:10 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/18 00:28:33 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/22 23:21:34 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
+	size_t	i;
 	char	*str;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: tibloch <tibloch@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 22:26:45 by tibloch           #+#    #+#             */
-/*   Updated: 2026/11/21 19:10:42 by tibloch          ###   ########lyon.fr   */
+/*   Updated: 2026/11/22 23:19:56 by tibloch          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int		i;
+	size_t	i;
 	size_t	len;
 
 	i = 0;
