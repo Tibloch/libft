@@ -26,9 +26,9 @@ Functions that are made to have the same comportement than the original one.
 
 |  Function                                                    |  Description                             |
 | ------------------------------------------------------------|---------------------------------------- |
-|-------------------------------------------------------------|-----------------------------------------|
+|||
 | *ft_is*                                                          |  *look for certain charactere value*                       |
-|-------------------------------------------------------------|-----------------------------------------|
+|||
 | int ft_isalpha(int c)                                       | if c = alpha char return 1 else 0       |
 | int ft_isalnum(int c)                                       | if c = alpha or digit char return 1 else 0 |
 | int ft_isascii(int c)                                       | if c = ascii char return 1 else 0       |
