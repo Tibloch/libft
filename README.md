@@ -8,10 +8,15 @@ Personal C library made for the purpose of learning C
 
 ## Instruction
 
+Makefile command: 
+make: compil and make archive
+make clean: delete objects and dependencies
+make fclean: clean and delete archive
+make re: fclean then make
+
 ## Ressources
 
-Linux Programmer's Manual, Stack Overflow, MYCPLUS, Students of 42 Lyon
-100 % humans brains
+Linux Programmer's Manual, Students of 42 Lyon, Stack Overflow, MYCPLUS, 
 
 --------------
 
@@ -22,7 +27,7 @@ Functions that are made to have the same comportement than the original one.
 | Function                                                    | Description                             |
 | ------------------------------------------------------------|---------------------------------------- |
 |								|					|
-| is                                                          | look for certain charactere value                       |
+| ft_is                                                          | look for certain charactere value                       |
 |                                                             |                                         |
 | int ft_isalpha(int c)                                       | if c = alpha char return 1 else 0       |
 | int ft_isalnum(int c)                                       | if c = alpha or digit char return 1 else 0 |
@@ -40,6 +45,7 @@ Functions that are made to have the same comportement than the original one.
 | int ft_strncmp(const char *s1, const char s2*, size_t n)    	    | compare s1 and s2 for n bytes and return 0 for s1=s2, <0 for s1 < s2, >0 for s1 > s2 |
 | char *ft_strnstr(const char *big, const char *little, size_t len) | search little in big, return pointer to first char of little in big or big if little is empty or NULL  for no match |
 | char *ft_strrchr(const char *str, int c)                    	    | search and return a pointer of the last char c in str or NULL if no match |
+| int ft_atoi(const char *str)                                | convert initial portion of nptr to int and return it or 0 on error |
 |                                                             |                                         |
 | mem                                                         |	use memory	                                    |
 |                                                             |                                         |
@@ -49,19 +55,18 @@ Functions that are made to have the same comportement than the original one.
 | void *ft_memmove(void *dst, const char *src, size_t n)      | copy n bytes from src to tmp array to dst and return dst |
 | void *ft_memset(void *s, int c, size_t n)                   | fill n bytes of s with c, return area pointed by s |
 | void ft_bzero(void *s, size_t n)                            | fill n bytes of s with zero             |
+| void *ft_calloc(size_t nmemb, size_t size)                  | alloc mem for an array of nmemb element of size bytes, fill it with zero and return it |
 |                                                             |                                         |
-| miscellaneous                                                        |      	                                |
+| ft_to                                                       |  convert charachtere                    |
 |								|					|
 | int ft_tolower(int c)                                       | if c = uppercase convert to lowercase, return c |
 | int ft_toupper(int c)                                       | if c = lowercase convert to uppercase, return c |
-| int ft_atoi(const char *str)                                | convert initial portion of nptr to int and return it or 0 on error |
-| void *ft_calloc(size_t nmemb, size_t size)                  | alloc mem for an array of nmemb element of size bytes, fill it with zero and return it |
 
 -------------
 
 ### Second part
 
-Functions that exist in a different form or not at all
+Functions that already exist in a different form or not at all
 
 | Function | Description |
 | -------- | ----------- |
@@ -81,7 +86,7 @@ Functions that exist in a different form or not at all
 | void ft_putchar_fd(char c, int fd) | write c to the file fd |
 | void ft_putendl_fd(char *s, int fd) | write s and a newline to the file fd |
 | void ft_putnbr_fd(int n, int fd) | write n to the file fd |
-|  void ft_putstr_fd(char *s, int fd) | write s to the file fd |
+| void ft_putstr_fd(char *s, int fd) | write s to the file fd |
 
 ---------
 
