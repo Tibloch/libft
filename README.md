@@ -24,10 +24,10 @@ Linux Programmer's Manual, Students of 42 Lyon, Stack Overflow, MYCPLUS,
 
 Functions that are made to have the same comportement than the original one.
 
-| ### Function                                                    | ### Description                             |
+|  Function                                                    |  Description                             |
 | ------------------------------------------------------------|---------------------------------------- |
 |								|					|
-| #### ft_is                                                          | #### look for certain charactere value                       |
+| *ft_is*                                                          |  *look for certain charactere value*                       |
 |                                                             |                                         |
 | int ft_isalpha(int c)                                       | if c = alpha char return 1 else 0       |
 | int ft_isalnum(int c)                                       | if c = alpha or digit char return 1 else 0 |
@@ -35,7 +35,7 @@ Functions that are made to have the same comportement than the original one.
 | int ft_isdigit(int c)                                       | if c = digit char return 1 else 0       |
 | int ft_isprint(int c)                                       | if c = printable char return 1 else 0   |
 |                                                             |                                         |
-| #### string                                                        | #### use and modify string                                 |
+|  *string*                                                        | *use and modify string*                                 |
 |								|					|
 | char *ft_strchr(const char *str, int c)                     	    | search and return a pointer of  the first char c in str or NULL if no match |
 | char *ft_strdup(const char *s)                              	    | copy string s in new malloc string and return it |
@@ -47,7 +47,7 @@ Functions that are made to have the same comportement than the original one.
 | char *ft_strrchr(const char *str, int c)                    	    | search and return a pointer of the last char c in str or NULL if no match |
 | int ft_atoi(const char *str)                                | convert initial portion of nptr to int and return it or 0 on error |
 |                                                             |                                         |
-| #### mem                                                         |	#### use memory	                                    |
+| *mem*                                                         |	*use memory*	                                    |
 |                                                             |                                         |
 | void *ft_memchr(const void *s, int c, size_t n)             | search first c in *s for n bytes and return a pointer to it or NULL if no match |
 | int ft_memcmp(const char *s1, const char *s2, size_t n)     | compare s1 and s2 for n bytes and return 0 for s1=s2, <0 for s1 < s2, >0 for s1 > s2 |
@@ -57,7 +57,7 @@ Functions that are made to have the same comportement than the original one.
 | void ft_bzero(void *s, size_t n)                            | fill n bytes of s with zero             |
 | void *ft_calloc(size_t nmemb, size_t size)                  | alloc mem for an array of nmemb element of size bytes, fill it with zero and return it |
 |                                                             |                                         |
-| #### ft_to                                                       |  #### convert charachtere                    |
+| *ft_to*                                                       |  *convert charachtere*                    |
 |								|					|
 | int ft_tolower(int c)                                       | if c = uppercase convert to lowercase, return c |
 | int ft_toupper(int c)                                       | if c = lowercase convert to uppercase, return c |
@@ -68,10 +68,10 @@ Functions that are made to have the same comportement than the original one.
 
 Functions that already exist in a different form or not at all
 
-| ### Function | ### Description |
+| Function |  Description |
 | -------- | ----------- |
 |		|	|
-| #### str      | #### use/modify string 		 |
+| *str*      | *use/modify string* 		 |
 |		|	|
 | char *ft_itoa(int n)   | convert and return a int in array of char |
 | char **ft_split(char const *s, char c) | alloc memory and return an array of string by spliting s with c for delimiter |
@@ -81,7 +81,7 @@ Functions that already exist in a different form or not at all
 | char *ft_strtrim(char const *s1, char const *set) | alloc memory and return new string wich is s1 with removed character from set from the beginning and the end |
 | char *ft_substr(char const *s, unsigned int start, size_t len) | alloc memory and return new string from s wich begin at start and with max length of len |
 |	  |		|
-| #### fd 	  | #### write to file descriptor		|
+| *fd* 	  | *write to file descriptor*		|
 |		|	|
 | void ft_putchar_fd(char c, int fd) | write c to the file fd |
 | void ft_putendl_fd(char *s, int fd) | write s and a newline to the file fd |
@@ -94,7 +94,7 @@ Functions that already exist in a different form or not at all
 
 Function that manipulate linked list
 
-| ### Function | ### Description |
+| Function | Description |
 | -------- | ----------- |
 |	   |		 |
 | void ft_lstadd_back(t_list **lst, t_list *new) | add node new to the end of lst |
